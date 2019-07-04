@@ -51,7 +51,9 @@ class ControlsViewController: UITableViewController {
             // Text fields
             Section(heading: "Text Fields", cells: [
                 LMTableViewCell(selectionStyle: .none,
-                    UITextField(placeholder: "Text")
+                    UITextField(placeholder: "Text", editChange: { tf in
+                        NSLog("editChange:%@", tf.text ?? "")
+                    })
                 ),
                 LMTableViewCell(selectionStyle: .none,
                     UITextField(placeholder: "Number", keyboardType: .numberPad)

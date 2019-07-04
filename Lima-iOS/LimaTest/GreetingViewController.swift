@@ -17,14 +17,39 @@ import Lima
 
 class GreetingViewController: UIViewController {
     override func loadView() {
+        let items = ["First", "Second", "Third", "Four", "Five"]
         let columnView = LMColumnView(
             UIImageView(image: UIImage(named: "world.png"), contentMode: .scaleAspectFit),
-            UILabel(text: "Hello, World!", textAlignment: .center)
+            UILabel(text: "Hello, World!", textAlignment: .center),
+            LMColumnView(
+                items.map { item in
+                    UILabel(text: "Hello, \(item)!", textAlignment: .center)
+                }
+            )
         )
 
         view = LMScrollView(isFitToWidth: true,
             backgroundColor: UIColor.white,
             columnView)
+
+//        view = LMRootView(backgroundColor: UIColor.white,
+//                      LMTableView(items, { item in
+//                            LMTableViewCell(
+//                                LMRowView(
+//                                    UILabel(text: "Hello, \(item)!"),
+//                                    LMSpacer(),
+//                                    UIImageView(image: UIImage(named: "EmailIcon")) {
+//                                        if item == "Five" {
+//                                            $0.isDisplayable = false
+//                                        } else {
+//                                            $0.isDisplayable = true
+//                                        }
+//                                    }
+//                                )
+//                            )
+//                      }, select: { indexPath in
+//                            NSLog("select at row:%d", indexPath.row)
+//                      })
+//                )
     }
 }
-

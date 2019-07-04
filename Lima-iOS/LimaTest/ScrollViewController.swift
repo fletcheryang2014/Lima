@@ -38,7 +38,9 @@ class ScrollViewController: UIViewController {
                 },
 
                 LMColumnView(margin: 20, anchor: [.bottom, .left, .right],
-                    UIButton(type: .system, title: "Press Me!") { button in
+                     UIButton(type: .system, title: "Press Me!", action: { [weak self] btn in
+                        self?.showGreeting()
+                     }) { button in
                         button.backgroundColor = UIColor(0xffffff, alpha: 0.9)
                         button.contentEdgeInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
 
@@ -46,7 +48,7 @@ class ScrollViewController: UIViewController {
                         button.layer.borderColor = UIColor.gray.cgColor
                         button.layer.cornerRadius = 6
 
-                        button.addTarget(self, action: #selector(self.showGreeting), for: .primaryActionTriggered)
+//                        button.addTarget(self, action: #selector(self.showGreeting), for: .primaryActionTriggered)
                     }
                 )
             )

@@ -69,12 +69,33 @@ public extension UIImageView {
     }
 }
 
+private struct AssociatedKeys {
+    static var actionKey = "actionKey"
+}
+
+typealias BtnAction = (UIButton) -> Void
+
 public extension UIButton {
+    
+    private var action: BtnAction? {
+        set{
+            objc_setAssociatedObject(self, &AssociatedKeys.actionKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_COPY)
+        }
+        get{
+            return objc_getAssociatedObject(self, &AssociatedKeys.actionKey) as? BtnAction
+        }
+    }
+    
+    @objc func buttonClicked(_ btn: UIButton) {
+        action?(btn)
+    }
+    
     convenience init(type: UIButton.ButtonType,
         title: String? = nil, image: UIImage? = nil,
         tintColor: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
+        action: ((UIButton) -> Void)? = nil,
         with: ((UIButton) -> Void)? = nil) {
         self.init(type: type)
 
@@ -85,12 +106,31 @@ public extension UIButton {
 
         self.weight = weight
         self.anchor = anchor
+        
+        self.addTarget(self, action:#selector(buttonClicked(_:)) , for:.touchUpInside)
+        self.action = action
 
         with?(self)
     }
 }
 
+typealias TextFieldAction = (UITextField) -> Void
+
 public extension UITextField {
+    
+    private var editChange: TextFieldAction? {
+        set{
+            objc_setAssociatedObject(self, &AssociatedKeys.actionKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_COPY)
+        }
+        get{
+            return objc_getAssociatedObject(self, &AssociatedKeys.actionKey) as? TextFieldAction
+        }
+    }
+    
+    @objc func textFieldEditingChanged(_ sender: UITextField) {
+        editChange?(sender)
+    }
+    
     convenience init(placeholder: String? = nil,
         textAlignment: NSTextAlignment = .natural, textColor: UIColor? = nil, font: UIFont? = nil,
         borderStyle: UITextField.BorderStyle = .none,
@@ -101,6 +141,7 @@ public extension UITextField {
         width: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
+        editChange: ((UITextField) -> Void)? = nil,
         with: ((UITextField) -> Void)? = nil) {
         self.init()
 
@@ -117,6 +158,9 @@ public extension UITextField {
         self.width = width
         self.weight = weight
         self.anchor = anchor
+        
+        self.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
+        self.editChange = editChange
 
         with?(self)
     }

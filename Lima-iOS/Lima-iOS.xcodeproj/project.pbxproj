@@ -69,6 +69,7 @@
 		37E75035218616A100B06374 /* Lima.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 376DD5C52186132B00A981C7 /* Lima.framework */; };
 		37E75036218616A100B06374 /* Lima.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 376DD5C52186132B00A981C7 /* Lima.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		37FAB1F0219634EF00F3E02A /* PeriodicTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37FAB1EF219634EF00F3E02A /* PeriodicTableViewController.xib */; };
+		BE4AD2D822CB35A40036E022 /* LMTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4AD2D722CB35A40036E022 /* LMTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,12 +155,13 @@
 		379F3A3B218DC6AD002EA5B0 /* daisies.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = daisies.jpg; sourceTree = "<group>"; };
 		37E0B96D2190FB7300AEF092 /* PeriodicTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableViewController.swift; sourceTree = "<group>"; };
 		37E750232186169900B06374 /* LimaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LimaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		37E750252186169900B06374 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		37E750252186169900B06374 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37E750272186169900B06374 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		37E7502C2186169900B06374 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37E7502F2186169900B06374 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37E750312186169900B06374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37FAB1EF219634EF00F3E02A /* PeriodicTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeriodicTableViewController.xib; sourceTree = "<group>"; };
+		BE4AD2D722CB35A40036E022 /* LMTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 				37319154218A6558003BA813 /* LMTableViewHeaderFooterView.h */,
 				37319156218A6558003BA813 /* LMTableViewHeaderFooterView.m */,
 				374D720C218B06980037E83C /* LMTableViewHeaderFooterView.swift */,
+				BE4AD2D722CB35A40036E022 /* LMTableView.swift */,
 				3731915C218A6563003BA813 /* LMCollectionViewCell.h */,
 				3731915B218A6563003BA813 /* LMCollectionViewCell.m */,
 				373EB53921861953001FE0C9 /* UIKit+Lima.h */,
@@ -421,6 +424,7 @@
 				377907D8218900F0007FD152 /* LMSpacer.swift in Sources */,
 				37319151218A6548003BA813 /* LMScrollView.m in Sources */,
 				375724B0218A7B6E00E4E9AC /* LMScrollView.swift in Sources */,
+				BE4AD2D822CB35A40036E022 /* LMTableView.swift in Sources */,
 				377907DA21890CEF007FD152 /* LMLayoutView.swift in Sources */,
 				37319159218A6558003BA813 /* LMTableViewCell.m in Sources */,
 				374D720B218B06830037E83C /* LMTableViewCell.swift in Sources */,

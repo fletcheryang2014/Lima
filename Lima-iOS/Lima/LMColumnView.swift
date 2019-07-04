@@ -28,7 +28,7 @@ public extension LMColumnView {
         backgroundColor: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        _ subviews: UIView...,
+        _ subviews: [UIView] = [],
         with: ((LMColumnView) -> Void)? = nil) {
         self.init(margin: margin,
             topMargin: topMargin,
@@ -52,5 +52,36 @@ public extension LMColumnView {
         }
 
         with?(self)
+    }
+    convenience init(margin: CGFloat? = nil,
+        topMargin: CGFloat? = nil,
+        leadingMargin: CGFloat? = nil,
+        bottomMargin: CGFloat? = nil,
+        trailingMargin: CGFloat? = nil,
+        horizontalAlignment: LMHorizontalAlignment = .fill,
+        verticalAlignment: LMVerticalAlignment = .fill,
+        spacing: CGFloat = .nan,
+        isAlignToBaseline: Bool = false,
+        isAlignToGrid: Bool = false,
+        backgroundColor: UIColor? = nil,
+        weight: CGFloat = .nan,
+        anchor: LMAnchor = [],
+        _ subviews: UIView...,
+        with: ((LMColumnView) -> Void)? = nil) {
+        self.init(margin: margin,
+                  topMargin: topMargin,
+                  leadingMargin: leadingMargin,
+                  bottomMargin: bottomMargin,
+                  trailingMargin: trailingMargin,
+                  horizontalAlignment: horizontalAlignment,
+                  verticalAlignment: verticalAlignment,
+                  spacing: spacing,
+                  isAlignToBaseline: isAlignToBaseline,
+                  isAlignToGrid: isAlignToGrid,
+                  backgroundColor: backgroundColor,
+                  weight: weight,
+                  anchor: anchor,
+                  subviews,
+                  with: with)
     }
 }

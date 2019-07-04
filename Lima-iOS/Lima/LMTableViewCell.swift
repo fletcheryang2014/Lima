@@ -19,7 +19,7 @@ public extension LMTableViewCell {
         selectionStyle: UITableViewCell.SelectionStyle = .blue,
         _ content: UIView? = nil,
         with: ((LMTableViewCell) -> Void)? = nil) {
-        self.init()
+        self.init(style: .default, reuseIdentifier: "LMTableViewCell")
 
         setContent(content, ignoreMargins: false)
 
