@@ -72,8 +72,8 @@ class PeriodicTableViewController: UIViewController {
         init() {
             super.init(frame: CGRect())
 
-            width = 48
-            height = 48
+            lm_width = 48
+            lm_height = 48
         }
 
         convenience init(_ number: Int, _ symbol: String, _ group: Group) {

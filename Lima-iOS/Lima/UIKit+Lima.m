@@ -18,14 +18,14 @@
 
 @implementation UIView (Lima)
 
-- (CGFloat)width {
-    NSLayoutConstraint *constraint = objc_getAssociatedObject(self, @selector(width));
+- (CGFloat)lm_width {
+    NSLayoutConstraint *constraint = objc_getAssociatedObject(self, @selector(lm_width));
 
     return (constraint == nil) ? NAN : [constraint constant];
 }
 
-- (void)setWidth:(CGFloat)width {
-    NSLayoutConstraint *constraint = objc_getAssociatedObject(self, @selector(width));
+- (void)setLm_width:(CGFloat)width {
+    NSLayoutConstraint *constraint = objc_getAssociatedObject(self, @selector(lm_width));
 
     [constraint setActive:NO];
 
@@ -39,17 +39,17 @@
 
     [constraint setActive:YES];
 
-    objc_setAssociatedObject(self, @selector(width), constraint, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(lm_width), constraint, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (CGFloat)height {
-    NSLayoutConstraint *constraint = objc_getAssociatedObject(self, @selector(height));
+- (CGFloat)lm_height {
+    NSLayoutConstraint *constraint = objc_getAssociatedObject(self, @selector(lm_height));
 
     return (constraint == nil) ? NAN : [constraint constant];
 }
 
-- (void)setHeight:(CGFloat)height {
-    NSLayoutConstraint *constraint = objc_getAssociatedObject(self, @selector(height));
+- (void)setLm_height:(CGFloat)height {
+    NSLayoutConstraint *constraint = objc_getAssociatedObject(self, @selector(lm_height));
 
     [constraint setActive:NO];
 
@@ -63,7 +63,7 @@
 
     [constraint setActive:YES];
 
-    objc_setAssociatedObject(self, @selector(height), constraint, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(lm_height), constraint, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (CGFloat)weight {

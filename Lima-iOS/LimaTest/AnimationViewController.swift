@@ -58,13 +58,13 @@ class AnimationViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        detailView.height = 0
+        detailView.lm_height = 0
     }
 
     @objc func toggleDetail(_ sender: UISwitch) {
         view.layoutIfNeeded()
 
-        detailView.height = sender.isOn ? 175 : 0
+        detailView.lm_height = sender.isOn ? 175 : 0
 
         UIView.animate(withDuration: 0.33, animations: {
             self.view.layoutIfNeeded()

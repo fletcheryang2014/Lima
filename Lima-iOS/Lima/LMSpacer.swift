@@ -21,8 +21,8 @@ public extension LMSpacer {
         with: ((LMSpacer) -> Void)? = nil) {
         self.init()
 
-        self.width = width
-        self.height = height
+        self.lm_width = width
+        self.lm_height = height
         self.weight = weight
 
         self.backgroundColor = backgroundColor

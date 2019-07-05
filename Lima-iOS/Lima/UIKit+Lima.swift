@@ -60,8 +60,8 @@ public extension UIImageView {
         self.contentMode = contentMode
         self.tintColor = tintColor
 
-        self.width = width
-        self.height = height
+        self.lm_width = width
+        self.lm_height = height
         self.weight = weight
         self.anchor = anchor
 
@@ -155,7 +155,7 @@ public extension UITextField {
         self.autocapitalizationType = autocapitalizationType
         self.isSecureTextEntry = isSecureTextEntry
 
-        self.width = width
+        self.lm_width = width
         self.weight = weight
         self.anchor = anchor
         
@@ -177,7 +177,7 @@ public extension UIDatePicker {
 
         self.datePickerMode = datePickerMode
 
-        self.height = height
+        self.lm_height = height
         self.weight = weight
         self.anchor = anchor
 
@@ -325,8 +325,8 @@ public extension UITextView {
         self.textColor = textColor
         self.font = font
 
-        self.width = width
-        self.height = height
+        self.lm_width = width
+        self.lm_height = height
         self.weight = weight
         self.anchor = anchor
 

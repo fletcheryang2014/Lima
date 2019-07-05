@@ -50,12 +50,12 @@ typedef NS_OPTIONS(NSUInteger, LMAnchor) {
 /**
  * The view's width, or <code>NaN</code> for no explicit width.
  */
-@property (nonatomic) CGFloat width;
+@property (nonatomic) CGFloat lm_width;
 
 /**
  * The view's height, or <code>NaN</code> for no explicit height.
  */
-@property (nonatomic) CGFloat height;
+@property (nonatomic) CGFloat lm_height;
 
 /**
  * The view's weight, or <code>NaN</code> for no weight.

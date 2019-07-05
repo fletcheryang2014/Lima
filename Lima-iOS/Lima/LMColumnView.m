@@ -117,7 +117,7 @@
 
         CGFloat weight = [subview weight];
 
-        if (!isnan(weight) && isnan([subview height])) {
+        if (!isnan(weight) && isnan([subview lm_height])) {
             if (previousWeightedSubview != nil) {
                 [constraints addObject:[NSLayoutConstraint constraintWithItem:subview attribute:NSLayoutAttributeHeight
                     relatedBy:NSLayoutRelationEqual toItem:previousWeightedSubview attribute:NSLayoutAttributeHeight
